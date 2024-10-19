@@ -32,15 +32,15 @@ export const DashboardMenu = [
 	},
 	{
 		id: uuid(),
-		title: 'LAYOUTS & PAGES',
+		title: 'Linkage Center',
 		grouptitle: true
 	},
 	{
 		id: uuid(),
-		title: 'Pages',
+		title: 'เลขประจำตัวประชาชน',
 		icon: 'layers',
 		children: [
-			{ id: uuid(), link: '/pages/profile', name: 'Profile' },
+			{ id: uuid(), link: '/pages/profile', name: 'ข้อมูลบุคคล' },
 			{ id: uuid(), link: '/pages/settings', name: 'Settings'},
 			{ id: uuid(), link: '/pages/billing', name: 'Billing' },
 			{ id: uuid(), link: '/pages/pricing', name: 'Pricing'},
