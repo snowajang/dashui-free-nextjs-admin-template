@@ -15,50 +15,23 @@ const SignIn = () => {
         {/* Card */}
         <Card className="smooth-shadow-md">
           {/* Card body */}
-          <Card.Body className="p-6">
+          <Card.Body className="p-6 text-center">
             <div className="mb-4">
-              <Link href="/"><Image src="/images/brand/logo/logo-primary.svg" className="mb-2" alt="" /></Link>
-              <p className="mb-6">Please enter your user information.</p>
+              {/* <Link href="/"><Image src="/images/brand/logo/logo-primary.svg" className="mb-2" alt="" /></Link> */}
+              <p className='my-4 h2 text-primary'>PDAS</p>
+              <p className="mb-1">Population Data Access System</p>
+              <p className="mb-6 h4 text-primary">ระบบการเข้าถึงข้อมูลประชากร</p>
             </div>
             {/* Form */}
             {hasMounted &&
-              <Form>
-                {/* Username */}
-                <Form.Group className="mb-3" controlId="username">
-                  <Form.Label>Username or email</Form.Label>
-                  <Form.Control type="email" name="username" placeholder="Enter address here" required="" />
-                </Form.Group>
-
-                {/* Password */}
-                <Form.Group className="mb-3" controlId="password">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" name="password" placeholder="**************" required="" />
-                </Form.Group>
-
-                {/* Checkbox */}
-                <div className="d-lg-flex justify-content-between align-items-center mb-4">
-                  <Form.Check type="checkbox" id="rememberme">
-                    <Form.Check.Input type="checkbox" />
-                    <Form.Check.Label>Remember me</Form.Check.Label>
-                  </Form.Check>
-                </div>
-                <div>
-                  {/* Button */}
-                  <div className="d-grid">
-                    <Button variant="primary" type="submit">Sign In</Button>
-                  </div>
-                  <div className="d-md-flex justify-content-between mt-4">
-                    <div className="mb-2 mb-md-0">
-                      <Link href="/authentication/sign-up" className="fs-5">Create An Account </Link>
-                    </div>
-                    <div>
-                      <Link href="/authentication/forget-password" className="text-inherit fs-5">Forgot your password?</Link>
-                    </div>
-                  </div>
-                </div>
-              </Form>}
-
-
+              <div className="d-grid">
+                <Link href="https://web-app.bora.dopa.go.th/thaid/auth?state=thaid" className="btn btn-outline-primary" type="submit">
+                  <Image src="/images/thaid/logo_thaid.png" className="mb-2" alt="" width="42"/>
+                  &nbsp;&nbsp;&nbsp;
+                  เข้าสู่ระบบด้วย ThaID 
+                </Link>
+              </div>
+            }
           </Card.Body>
         </Card>
       </Col>

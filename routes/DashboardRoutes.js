@@ -1,27 +1,4 @@
 import { v4 as uuid } from 'uuid';
-/**
- *  All Dashboard Routes
- *
- *  Understanding name/value pairs for Dashboard routes
- *
- *  Applicable for main/root/level 1 routes
- *  icon 		: String - It's only for main menu or you can consider 1st level menu item to specify icon name.
- *
- *  Applicable for main/root/level 1 and subitems routes
- * 	id 			: Number - You can use uuid() as value to generate unique ID using uuid library, you can also assign constant unique ID for react dynamic objects.
- *  title 		: String - If menu contains childern use title to provide main menu name.
- *  badge 		: String - (Optional - Default - '') If you specify badge value it will be displayed beside the menu title or menu item.
- * 	badgecolor 	: String - (Optional - Default - 'primary' ) - Used to specify badge background color.
- *
- *  Applicable for subitems / children items routes
- *  name 		: String - If it's menu item in which you are specifiying link, use name ( don't use title for that )
- *  children	: Array - Use to specify submenu items
- *
- *  Used to segrigate menu groups
- *  grouptitle : Boolean - (Optional - Default - false ) If you want to group menu items you can use grouptitle = true,
- *  ( Use title : value to specify group title  e.g. COMPONENTS , DOCUMENTATION that we did here. )
- *
- */
 
 export const DashboardMenu = [
 	{
@@ -35,10 +12,62 @@ export const DashboardMenu = [
 		title: 'Linkage Center',
 		grouptitle: true
 	},
-	{
-		id: uuid(),
+	{ 
+		id: uuid(), 
 		title: 'เลขประจำตัวประชาชน',
 		icon: 'layers',
+		children: [
+			{ id: uuid(), link: '/lk/pid/pophouse', name: 'รายการบุคคล'},
+			{ id: uuid(), link: '/lk/pid/card', name: 'รายการบัตร' },
+			{ id: uuid(), link: '/lk/pid/move', name: 'รายการย้าย' },
+			{ id: uuid(), link: '/lk/pid/marray', name: 'รายการสมรส การหย่า' },
+			{ id: uuid(), link: '/lk/pid/popinhouse', name: 'รายการคนในบ้าน' },
+			{ id: uuid(), link: '/lk/pid/rename', name: 'รายการเปลี่ยนชื่อ' }
+		]
+	},
+	{ 
+		id: uuid(), 
+		title: 'ชื่อ สกุล',
+		icon: 'layers',
+		children: [
+			{ id: uuid(), link: '/lk/name/pophouse', name: 'รายการบุคคล'},
+		]
+	},
+	{
+		id: uuid(), 
+		title: 'ชื่อ สกุล เดิม',
+		icon: 'layers',
+		children: [
+			{ id: uuid(), link: '/lk/oldname/pophouse', name: 'รายการบุคคล'},
+		]
+	},
+	{ 
+		id: uuid(), 
+		title: 'เลขรหัสประจำบ้าน',
+		icon: 'layers',
+		children: [
+			{ id: uuid(), link: '/lk/hid/popinhouse', name: 'รายการคนในบ้าน' },
+		]
+	},
+	{ 
+		id: uuid(), 
+		title: 'บ้านเลขที่',
+		icon: 'layers',
+		children: [
+			{ id: uuid(), link: '/lk/catm/popinhouse', name: 'รายการคนในบ้าน' },
+		]
+	},
+	{ 
+		id: uuid(), 
+		title: 'เลขคำร้องขอมีบัตร',
+		icon: 'layers',
+		children: [
+			{ id: uuid(), link: '/lk/bp1/card', name: 'รายการบัตร' },
+		]
+	},
+	{
+		id: uuid(),
+		title: 'การค้นหาด้วย',
 		children: [
 			{ id: uuid(), link: '/pages/profile', name: 'ข้อมูลบุคคล' },
 			{ id: uuid(), link: '/pages/settings', name: 'Settings'},
